@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     font-family:Arial, sans-serif;
     background-color: #F2F2F2;
@@ -43,4 +44,51 @@ butoon:hover {
 #resultado{
     font-weight:bold;
     margin-top:20px;
+=======
+body {
+    font-family:Arial, sans-serif;
+    background-color: #F2F2F2;
+    
+    Display:flex;
+    justify-content: center;
+    align-items:center;
+
+    height: 100vh;
+    margin: 0;
+}
+
+.quiz-container{
+    background-color: white;
+    width:400px;
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+}   
+
+button{
+    width:100%;
+    padding:12px;
+margin: 5px 0;
+
+border: none;
+border-radius: 5px;
+
+background-color: #007bff;
+color:white;
+
+cursor:pointer;
+}
+
+butoon:hover {
+    background: #0056b3;
+}
+
+#resultado{
+    font-weight:bold;
+    margin-top:20px;
+>>>>>>> 03e5a7d (primeiro commit)
 }
