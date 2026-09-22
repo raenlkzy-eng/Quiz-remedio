@@ -1,67 +1,71 @@
 const perguntas = [
-    {
-        pergunta:"Qual linguagem é responsavel pela estrutura de uma pagina web?",
-        alternativas:[
-            "CSS",
-            "html",
-            "javaScript",
-            "Python"
-        ],
-        correta: 1
-    },
+  {
 
+    pergunta: "Qual linguagem é responsável pela estrutura da página web?",
+    alternativas: [
+        "CSS",
+        "HTML",
+        "JS",
+        "Python",
 
-{
-    pergunta:"Qual linguagem usamos principalmente para estilizar uma pagina?",
-    alternativas:[
-        "Html",
+    ],
+    correta: 1
+  },
+
+   {
+
+    pergunta: "Qual linguagem usamos para estilizar uma página?",
+    alternativas: [
+        "HTML",
         "Java",
-        "Css",
-        "Python"
+        "CSS",
+        "Python",
+
     ],
     correta: 2
-},
+  },
 
-{
-    pergunta:"Qual linguagem permite adicionar interativamente a uma pagina?",
-    alternativas:[
-        "javaScript",
-            "Html",
-            "Css",
-            "SQL"
+   {
+
+    pergunta: "Qual linguagem permite adicionar interatividade a uma página?",
+    alternativas: [
+        "JS",
+        "HTML",
+        "CSS",
+        "SQL",
 
     ],
-    corretas: 0
+    correta: 0
+  },
 
-},
+   {
 
-{
-    pergunta:"Qual evento ocorre quando o usuario clica em um elemento?",
-    alternativas:[
+    pergunta: "Qual evento ocorre quando o usuário clica em um elemento?",
+    alternativas: [
         "mouseover",
-            "click",
-            "load",
-            "change"
+        "click",
+        "load",
+        "change",
 
     ],
-correta: 1
-},
+    correta: 1
+  },
 
+  {
 
-{
-    pergunta:"Qual comando pode localizar um elemento pelo seu ID?",
-    alternativas:[
-        "Document.getElementById()",
-            "console.log()",
-            "load",
-            "change"
+  pergunta: "Qual comando pode localizar um elemento pelo seu ID?",
+    alternativas: [
+        "document.getElementById()",
+        "cosole.log()",
+        "alert()",
+        "document.write()",
 
     ],
-correta: 1
-},
+    correta: 0
+  },
+
 
 ];
-
 
 let perguntaAtual = 0;
 let pontos = 0;
@@ -70,46 +74,44 @@ let pontos = 0;
 function mostrarPergunta() {
 
     const pergunta = perguntas[perguntaAtual];
-    
+
     document.getElementById("pergunta").textContent =
-pergunta.pergunta;
+      pergunta.pergunta;
 
-const alternativas = document.getElementById("alternativas");
+    const alternativas = document.getElementById("alternativas");
 
-alternativas.innerHTML = "";
+    alternativas.innerHTML = "";
 
-pergunta.alternativas.forEach((alternativa, indice) => {
+    pergunta.alternativas.forEach((alternativa, indice) => {
 
-    const botao = document.createElement("button");
+        const botao = document.createElement("button");
 
-botao.textContent = alternativa;
+        botao.textContent = alternativa;
 
-botao.onclick = function () {
-    verificarResposta(indice);
-};
+        botao.onclick = function () {
+            verificarResposta(indice);
 
-alternativas.appendChild(botao);
-});
+        };
+
+        alternativas.appendChild(botao);
+    });
+
 }
 
+function verificarResposta(indice) {
 
-function verificarResposta(indice){
-
-    if(indice === perguntas[perguntaAtual].correta){
+    if(indice === perguntas[perguntaAtual].correta) {
         pontos++;
     }
 
-    perguntaAtualtual++;
+    perguntaAtual++;
 
     if(perguntaAtual < perguntas.length) {
 
         mostrarPergunta();
-
-    
     } else {
 
         mostrarResultado();
-
     }
 }
 
@@ -118,11 +120,11 @@ function mostrarResultado() {
     document.getElementById("pergunta").textContent =
     "Quiz finalizado!";
 
-    document.getElementById("alternativas").innerHtml = "";
+    document.getElementById("alternativas").innerHTML = "";
 
     document.getElementById("resultado").textContent =
-    "Você acertou "+ pontos +
-    " de " + perguntas.length + "perguntas.";
+    "Você acertou " + pontos +
+    " de " + perguntas.length + " perguntas.";
 
 }
 
